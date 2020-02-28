@@ -17,5 +17,6 @@ void main()
     frontColor = vec4(color,1.0)*abs(N.z);
     vtexCoord = texCoord;
     gl_Position = modelViewProjectionMatrix * vec4(vertex, 1.0);
+    gl_Position /= gl_Position.w;
     gl_Position.z = -gl_Position.z;
 }
