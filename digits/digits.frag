@@ -14,12 +14,12 @@ void main()
     int tens = (seconds/10)%10;
     int hund = (seconds/100)%10;
     float s = vtexCoord.s;
-    int chosen = ones;
+    int chosen = hund;
     if (s >= 1 && s < 2) chosen = tens;
-    else if (s >= 2 && s < 3) chosen = hund;
+    else if (s >= 2 && s < 3) chosen = ones;
     float horiz = fract(s);
     float vert = vtexCoord.t;
-    float a = texture(colorMap, vec2(float(chosen)/10.0 + horiz, vert)).a;
+    float a = texture(colorMap, vec2(float(chosen)/10.0 + horiz/10.0, vert)).a;
     if (a < 0.5) discard;
     fragColor = vec4(1, 0, 0, 1);
 }
