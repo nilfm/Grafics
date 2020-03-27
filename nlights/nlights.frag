@@ -39,6 +39,6 @@ void main()
     for (int i = 0; i < n; i++) {
         float theta = 2*i*pi/n;
         vec3 L = vec3(10*cos(theta), 10*sin(theta), 0);
-        fragColor += Phong(N, L, V);
+        fragColor += Phong(N, L+V, V);
     }
 }
