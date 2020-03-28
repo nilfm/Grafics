@@ -1,0 +1,6 @@
+for i in $(seq 2 44);
+do
+    fullpath=$(ls ex$i/*frag);
+    name=$(basename $fullpath .frag);
+    mv ex$i $name
+done
