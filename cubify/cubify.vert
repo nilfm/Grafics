@@ -14,9 +14,9 @@ uniform mat3 normalMatrix;
 void main()
 {
     vec3 N = normalize(normalMatrix * normal);
-    frontColor = vec4(color,1.0) * N.z;
+    frontColor = vec4(color,1.0);
     vtexCoord = texCoord;
     vec3 vert = vertex;
     float maxabs = max(max(abs(vertex.x), abs(vertex.y)), abs(vertex.z));
-    gl_Position = modelViewProjectionMatrix * vec4(vertex/maxabs, 1.0);
+    gl_Position = modelViewProjectionMatrix * vec4(vertex/maxabs , 1.0);
 }

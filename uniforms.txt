@@ -26,5 +26,22 @@ uniform vec3 boundingBoxMax; // cantonada maxima de la capsa englobant
 
 uniform vec2 mousePosition;  // coordenades del cursor (window space; origen a la cantonada inferior esquerra)
 
+const vec4 RED     = vec4(1, 0, 0, 1);
+const vec4 GREEN   = vec4(0, 1, 0, 1);
+const vec4 BLUE    = vec4(0, 0, 1, 1);
+const vec4 CYAN    = vec4(0, 1, 1, 1);
+const vec4 MAGENTA = vec4(1, 0, 1, 1);
+const vec4 YELLOW  = vec4(1, 1, 0, 1);
+const vec4 WHITE   = vec4(1);
+const vec4 GREY    = vec4(0.8);
+const vec4 BLACK   = vec4(0);
 
-
+vec4 colors[8];
+colors[0] = vec4(1, 0, 0, 1); // RED
+colors[1] = vec4(1, 1, 0, 1); // YELLOW
+colors[2] = vec4(0, 1, 0, 1); // GREEN
+colors[3] = vec4(0, 1, 1, 1); // CYAN
+colors[4] = vec4(0, 0, 1, 1); // BLUE
+colors[5] = vec4(1, 0, 1, 1); // MAGENTA
+colors[6] = vec4(1, 0, 0, 1); // RED
+colors[7] = vec4(1, 0, 0, 1); // RED

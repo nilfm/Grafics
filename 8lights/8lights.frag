@@ -32,7 +32,7 @@ vec4 Phong(vec3 N, vec3 L, vec3 V)
     vec4 diffuse = matDiffuse*lightDiffuse*dotNL;
     vec4 specular = matSpecular*lightSpecular*specComponent;
    
-    return diffuse/8 +specular;
+    return diffuse/2 +specular;
 }
 
 void main()
@@ -45,7 +45,8 @@ void main()
         int ind[3];
         for (int j = 0; j < 3; j++) ind[j] = ((i & (1 << j)) != 0) ? 1 : 0;
         vec3 L = vec3(v[ind[0]].x, v[ind[1]].y, v[ind[2]].z);
-        fragColor += Phong(N, L, V);
+	L = (viewMatrix*vec4(L, 1)).xyz;
+        fragColor += Phong(N, L+V, V);
     }
 }
 
