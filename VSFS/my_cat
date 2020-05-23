@@ -1,0 +1,5 @@
+echo "VERTEX SHADER"
+cat ex$1/*.vert
+echo ""
+echo "FRAGMENT SHADER"
+cat ex$1/*.frag

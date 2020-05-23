@@ -1,0 +1,5 @@
+cp -r template $1
+mv $1/shadow.frag $1/$1.frag
+mv $1/shadow.vert $1/$1.vert
+mv $1/shadow.geom $1/$1.geom
+../Viewer/shader_viewer
